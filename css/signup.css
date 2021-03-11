@@ -1,6 +1,6 @@
 .bg-cover {
     background-image: url("../images/background.jpeg");
-    height: 100vh;
+    height: 150vh;
     background-position: center;
     background-size: cover;
     background-attachment: scroll;
