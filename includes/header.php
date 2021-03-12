@@ -1,5 +1,7 @@
-<!DOCTYPE html>
-<html>
+<?php
+session_start();
+?>
+
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -29,29 +31,29 @@
         </button>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
+            <ul class="navbar-nav mr-auto"> 
+            <?php if(isset($_SESSION['uid'])){
+               echo '<li class="nav-item">
+                    <a class="nav-link" href="includes/logout.php">Logout</a>
+                </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="login.html">Login</a>
+                    <a class="nav-link" href="gallery.php">Gallery</a>
                 </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li> 
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Reviews
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Replace Me</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Replace Me 2</a>
-                    </div>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.php">Profile</a>
+                </li>';
+                
+            }else{
+                echo '<li class="nav-item">
+                <a class="nav-link" href="includes/login.php">Login</a>
+            </li>';
+            }
+               ?>
+                    <li class="nav-item active">
+                    <a class="nav-link" href="../index.php">Home <span class="sr-only">(current)</span></a>
                 </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-            </form>
+             </ul>
+          </div>
         </div>
     </nav>
 </header>
