@@ -29,12 +29,6 @@ if(isset($_POST['prof-submit'])){
     }
     if(!in_array($ext,$allowed)){
 
-        header("Location: ../profile.php?error=UploadError");
-        exit();
-
-    }
-    if($file_error !==0){
-
         header("Location: ../profile.php?error=InvalidType");
         exit();
 
@@ -50,7 +44,7 @@ if(isset($_POST['prof-submit'])){
 
         $destination = '../profiles/'.$new_name;
 
-        $sql = "UPDATE profiles SSET profpic='$destination' WHERE uname='$uname'";
+        $sql = "UPDATE profiles SET profpic='$destination' WHERE uname='$uname'";
         
         mysqli_query($conn, $sql);
 
