@@ -80,7 +80,7 @@ CREATE TABLE `reviews` (
   `uname` varchar(80) NOT NULL COMMENT 'user reviewing item',
   `title` varchar(60) NOT NULL,
   `reviewtext` text NOT NULL,
-  `revdate` timestamp NOT NULL,
+  `revdate` datetime NOT NULL,
   `ratingnum` int(11) NOT NULL,
   `status` int(11) NOT NULL DEFAULT '0' COMMENT 'is there at least one review'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf16;
